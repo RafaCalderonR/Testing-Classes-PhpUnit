@@ -4,7 +4,9 @@
 namespace Component\Stub;
 
 
-class AuthenticatorStub
+use Component\AuthenticatorContract;
+
+class AuthenticatorStub implements AuthenticatorContract
 {
 
     public function check(){

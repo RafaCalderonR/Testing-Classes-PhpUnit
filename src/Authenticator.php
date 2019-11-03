@@ -1,6 +1,7 @@
 <?php
 namespace Component;
 use Component\SessionManager as Session;
+
 class Authenticator implements AuthenticatorContract
 {
     /**
