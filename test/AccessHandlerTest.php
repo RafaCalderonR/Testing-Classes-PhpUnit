@@ -2,7 +2,7 @@
 
 use Component\AccessHandler as Access;
 use Component\Authenticator;
-use Component\AuthenticatorInterface;
+use Component\AuthenticatorContract;
 use Component\User;
 class AccessHandlerTest extends PHPUnit_Framework_TestCase
 {
