@@ -9,18 +9,23 @@ class Session
     protected static $loaded = false;
     protected static $data = array();
 
+    public function __construct(SessionFileDrive $driver)
+    {
+        $this->driver =$driver;
+        $this->load();
+    }
+
     protected static function load()
     {
-        if (static:: $loaded) return;
-        static::$data = SessionFileDriver::load();
-        static::$loaded = true;
+        $this->$data = $this->load();
+
     }
 
     public static function get($key){
 
-        static::load();
 
-        return isset(static::$data[$key])
+
+        return isset($this->$data[$key])
             ? static::$data[$key]
             : null;
 

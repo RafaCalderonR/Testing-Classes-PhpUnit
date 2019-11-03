@@ -6,7 +6,12 @@ namespace Component;
 
 class SessionFileDrive
 {
-    public static function load()
+
+    public function __construct()
+    {
+    }
+
+    public  function load()
     {
         $file = __DIR__. '/../storage/session/session.json';
 
