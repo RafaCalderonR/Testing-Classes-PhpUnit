@@ -5,31 +5,24 @@
 namespace Component;
 
 
+
 class SessionManager
 {
-    protected static $loaded = false;
-    protected static $data = array();
-
-    public function __construct(SessionFileDrive $driver)
+    protected $driver;
+    protected $data = array();
+    public function __construct(SessionDriverInterface $driver)
     {
-        $this->driver =$driver;
+        $this->driver = $driver;
         $this->load();
     }
-
-    protected static function load()
+    protected function load()
     {
-        $this->$data = $this->load();
-
+        $this->data = $this->driver->load();
     }
-
-    public static function get($key){
-
-
-
-        return isset($this->$data[$key])
-            ? static::$data[$key]
+    public function get($key)
+    {
+        return isset($this->data[$key])
+            ? $this->data[$key]
             : null;
-
     }
-
 }
