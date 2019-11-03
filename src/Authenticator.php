@@ -2,26 +2,32 @@
 
 
 namespace Component;
-
+use Component\Session ;
 
 class Authenticator
 {
     protected static $user;
+    protected static $session;
+
+    public function __construct(Session $session)
+    {
+        $this->session = $session;
+    }
 
     public static function check(){
-        return static::user() != null;
+        return $this->user() != null;
     }
 
     public static function user()
     {
-        if(static::$user != null){
-            return static::$user;
+        if($this->user != null){
+            return $this->user;
         }
 
-        $data = Session::get('user_data');
+        $data = $this->session->get('user_data');
 
         if(! is_null($data)){
-            static::$user = new User($data);
+            $this->user = new User($data);
         }
 
         return null;

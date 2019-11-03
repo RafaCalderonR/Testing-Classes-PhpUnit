@@ -2,7 +2,7 @@
 
 
 namespace Component;
-
+use Component\Authenticator as Auth;
 
 class User
 {

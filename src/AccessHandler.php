@@ -4,6 +4,14 @@ namespace Component;
 
 class AccessHandler
 {
-    public static function check($role){
-        return  Auth::check() && Auth::user()->getRole()===$role;
+    protected $auth;
+
+    public function __construct($auth)
+    {
+        $this->auth = $auth;
+    }
+
+    public  function check($role){
+
+        return  $this->auth::check() && $this->auth->user()->role===$role;
 }}
