@@ -4,7 +4,7 @@
 namespace Component;
 
 
-class SessionFileDrive
+class SessionFileDrive implements SessionDriverContract
 {
 
     public function __construct()

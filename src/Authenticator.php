@@ -2,7 +2,7 @@
 
 
 namespace Component;
-use Component\Session ;
+use Component\SessionManager as Session ;
 
 class Authenticator
 {

@@ -1,10 +1,11 @@
 <?php
 
 
+
 namespace Component;
 
 
-class Session
+class SessionManager
 {
     protected static $loaded = false;
     protected static $data = array();
